@@ -1,0 +1,19 @@
+:root {
+    --main-blue: #212738;
+    --main-pink: #F97068;
+    --main-yellow: #D1D646;
+    --main-white: #EDF2EF;
+    --main-white-shadow: #DCE5DF;
+    --main-cyan: #57C4E5;
+}
+body {
+    background-color: var(--main-white);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+nav{
+    filter: drop-shadow(0 3mm 4mm var(--main-white-shadow));
+    flex-basis: 100%;
+}
