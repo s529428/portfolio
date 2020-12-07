@@ -15,7 +15,7 @@ body {
     justify-content: space-evenly;
     font-family: 'Lato', sans-serif;
 }
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5, h6 {
     font-family: 'Zilla Slab', serif;
     font-weight: 500;
 }
@@ -25,6 +25,19 @@ nav{
     margin-bottom: 40px;
     padding: 10px;
 }
+ul {
+    list-style-type: '– ';
+}
+ul li {
+    margin-top: .5rem;
+}
+.navigation-text > p{
+    padding-top: 0;
+    margin-top: 0;
+}
+.navigation-text h1 {
+    margin-bottom: 0;
+}
 h1 {
     font-weight: 700;
     font-size: 36px;
@@ -33,18 +46,49 @@ h1 {
     display: flex;
     flex-flow: column wrap;
     background-color: var(--main-white);
-    margin: 10px;
+    margin-left: 1rem;
+    margin-right: 1rem;
     color: var(--main-blue);
-    border-radius: 10px;
+    border-radius: 13px;
+    box-shadow: 0 15px 60px rgba(0,0,0,.5);
 }
-.section h2{
-    order: 99;
+main * + * {
+    margin-top: 1.5rem;
+}
+.section > .card-title{
+    /*order: 99; move to big screen*/
     text-align: center;
-    background-color: var(--main-yellow);
+    background-color: var(--main-cyan);
+    border-top-left-radius: 13px;
+    border-top-right-radius: 13px;
+    margin: 0;
+    padding: 0;
 }
-.section p {
-    padding: 5px 10px;
+.section > .card-content{
+    padding: 10px;
+    margin-top: 0;
 }
+.card-content > .work-entry:not(:first-child) {
+    margin-top: 2rem;
+}
+.card-content .work-entry:not(:last-child):after{
+    content: " ";
+    display: block;
+    position: absolute;
+    height: 1px;
+    background-color: var(--main-blue);
+    width:85%;
+}
+.date {
+    font-weight: 200;
+    font-size: .75em;
+}
+/*Move to desktop only*/
+.section > .card-title:hover {
+    background: linear-gradient(10deg, var(--main-cyan), var(--main-pink));
+    transition: 0.5s;
+}
+
 button:active {
     /*Andy said this makes buttons feel squishy, I want to try it out*/
     transform: scale(0.99);
