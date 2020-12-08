@@ -6,6 +6,9 @@
     --main-white-shadow: #DCE5DF;
     --main-cyan: #57C4E5;
 }
+html{
+    width: 100%;
+}
 body {
     background-color: var(--main-blue);
     width: 100%;
@@ -118,4 +121,65 @@ button:active {
 svg {
     /* Teomporary*/
     display: none;
+}
+
+
+
+/*Tablet*/
+@media only screen and (min-width: 426px){
+    main {
+        flex-flow: row wrap;
+    }
+    .section {
+        flex-basis: 45%;
+    }
+    .education {
+        margin-top: 1.5rem;
+    }
+    svg {
+        display: inline-block;
+    }
+    nav {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 10px;
+    }
+    nav > *{
+        padding: 10px
+    }
+    nav .smile {
+        width: 150px;
+        height: 150px;
+    }
+}
+/*Desktop*/
+@media (min-width: 769px){
+    .section {
+        flex-basis: 26.5vw;
+    }
+    
+    .card-content .work-entry:not(:last-child):after {
+        width: 25vw;
+    }
+}
+
+/*Lanscape Phone*/
+@media (orientation: landscape){
+    .section {
+        flex-basis: 100%;
+    }
+}
+
+/*SVG*/
+svg .mouth{
+    stroke: var(--main-blue);
+    stroke-width: 5;
+    fill: transparent;
+    stroke-linecap: round;
+}
+svg .eye{
+    fill: var(--main-blue);
+}
+svg .circle-head{
+    fill: var(--main-yellow);
 }
