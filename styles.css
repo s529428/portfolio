@@ -15,6 +15,10 @@ body {
     justify-content: space-evenly;
     font-family: 'Lato', sans-serif;
 }
+main {
+    display: flex;
+    flex-flow: column wrap;
+}
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Zilla Slab', serif;
     font-weight: 500;
@@ -24,6 +28,9 @@ nav{
     background-color: var(--main-white);
     margin-bottom: 40px;
     padding: 10px;
+}
+a {
+    color: var(--main-pink);
 }
 ul {
     list-style-type: '– ';
@@ -68,6 +75,7 @@ main * + * {
     padding: 10px;
     margin-top: 0;
 }
+
 .card-content > .work-entry:not(:first-child) {
     margin-top: 2rem;
 }
@@ -87,6 +95,20 @@ main * + * {
 .section > .card-title:hover {
     background: linear-gradient(10deg, var(--main-cyan), var(--main-pink));
     transition: 0.5s;
+}
+footer {
+    background-color: var(--main-white-shadow);
+    color: var(--main-blue);
+    margin-top: 1.5rem;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+footer .socials {
+    padding: 5px;
 }
 
 button:active {
