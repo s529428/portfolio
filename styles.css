@@ -21,6 +21,7 @@ body {
 main {
     display: flex;
     flex-flow: column wrap;
+    align-items: flex-start;
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Zilla Slab', serif;
@@ -187,9 +188,14 @@ svg {
     display: none;
 }
 /*Lanscape Phone*/
-@media (orientation: landscape){
+@media only screen and (min-device-width: 375px) and (max-device-width:813px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape){
+    main {
+        flex-flow: row wrap !important;
+        max-height: none !important;
+    }
     .section {
         flex-basis: 100%;
+
     }
     .inner-section {
         flex-basis: 100%;
@@ -198,10 +204,12 @@ svg {
 /*Tablet*/
 @media only screen and (min-width: 426px){
     main {
-        flex-flow: row wrap;
+        flex-flow: column wrap;
+        max-height: 3000px;
+        align-content: space-around;
     }
     .section {
-        flex-basis: 45%;
+        width: 49%;
     }
     .plain-section {
         flex-basis: 100%;
@@ -240,9 +248,10 @@ svg {
     main {
         width: 95%;
         margin:auto;
+        max-height: 1300px;
     }
     .section {
-        flex-basis: 30vw;
+        width: 30%;
     }
     .inner-section {
         flex-basis: 30%;
