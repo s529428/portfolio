@@ -62,6 +62,16 @@ h1 {
     border-radius: 13px;
     box-shadow: 0 15px 60px rgba(0,0,0,.5);
 }
+
+.inner-section {
+    display: flex;
+    flex-flow: column wrap;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border: .4rem solid var(--main-blue);
+    border-radius: 13px;
+}
+
 main * + * {
     margin-top: 1.5rem;
 }
@@ -74,11 +84,35 @@ main * + * {
     margin: 0;
     padding: 0;
 }
+.section > .plain-card-title{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.inner-section > .card-title{
+    text-align: center;
+    background-color: var(--main-yellow);
+    border-top-left-radius: 13px;
+    border-top-right-radius: 13px;
+    border-bottom: .4rem solid var(--main-blue);
+}
 .section > .card-content{
     padding: 10px;
     margin-top: 0;
 }
-
+.inner-section h4{
+    font-weight: 600;
+    padding: .25rem;
+    margin-bottom: 0;
+}
+.inner-section p{
+    padding: .25rem;
+    margin: 0;
+}
+.inner-section ul{
+    padding: 1rem;
+    margin: 0;
+}
 .card-content > .work-entry:not(:first-child) {
     margin-top: 2rem;
 }
@@ -93,6 +127,10 @@ main * + * {
 .date {
     font-weight: 200;
     font-size: .75em;
+}
+.work-entry-more-info {
+    text-decoration: none;
+    color: var(--main-blue);
 }
 /*Move to desktop only*/
 .section > .card-title:hover {
@@ -150,6 +188,13 @@ svg {
     nav .smile {
         width: 150px;
         height: 150px;
+    }
+    .navigation-text > p{
+        padding-top: 0;
+        margin-top: 0;
+    }
+    .navigation-text h1 {
+        font-size: 48px;
     }
 }
 /*Desktop*/
