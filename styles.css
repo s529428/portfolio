@@ -41,6 +41,11 @@ ul {
 ul li {
     margin-top: .5rem;
 }
+img {
+    border: 1rem solid var(--main-blue);
+    border-radius: 15px;
+    margin: 1.5rem;
+}
 .navigation-text > p{
     padding-top: 0;
     margin-top: 0;
@@ -62,7 +67,16 @@ h1 {
     border-radius: 13px;
     box-shadow: 0 15px 60px rgba(0,0,0,.5);
 }
-
+.plain-section {
+    display: flex;
+    flex-flow: column wrap;
+    background-color: var(--main-white);
+    margin-left: 1rem;
+    margin-right: 1rem;
+    color: var(--main-blue);
+    border-radius: 13px;
+    box-shadow: 0 15px 60px rgba(0,0,0,.5);
+}
 .inner-section {
     display: flex;
     flex-flow: column wrap;
@@ -76,7 +90,6 @@ main * + * {
     margin-top: 1.5rem;
 }
 .section > .card-title{
-    /*order: 99; move to big screen*/
     text-align: center;
     background-color: var(--main-cyan);
     border-top-left-radius: 13px;
@@ -84,7 +97,7 @@ main * + * {
     margin: 0;
     padding: 0;
 }
-.section > .plain-card-title{
+.plain-section > .plain-card-title{
     text-align: center;
     margin: 0;
     padding: 0;
@@ -114,7 +127,10 @@ main * + * {
     margin: 0;
 }
 .card-content > .work-entry:not(:first-child) {
-    margin-top: 2rem;
+    margin-top: .5rem;
+} 
+.work-entry {
+    padding: 1rem;
 }
 .card-content .work-entry:not(:last-child):after{
     content: " ";
@@ -122,7 +138,8 @@ main * + * {
     position: absolute;
     height: 1px;
     background-color: var(--main-blue);
-    width:85%;
+    margin-top: 1rem;
+    width:100%;
 }
 .date {
     font-weight: 200;
@@ -132,10 +149,19 @@ main * + * {
     text-decoration: none;
     color: var(--main-blue);
 }
-/*Move to desktop only*/
-.section > .card-title:hover {
-    background: linear-gradient(10deg, var(--main-cyan), var(--main-pink));
-    transition: 0.5s;
+.skill-list {
+    list-style-type: none;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 0;
+}
+.skill-list li{
+    border: 3px solid var(--main-pink);
+    border-radius: 1rem;
+    background-color: var(--main-pink);
+    color: var(--main-white);
+    padding: .5rem;
+    margin: .25rem;
 }
 footer {
     background-color: var(--main-white-shadow);
@@ -160,9 +186,15 @@ svg {
     /* Teomporary*/
     display: none;
 }
-
-
-
+/*Lanscape Phone*/
+@media (orientation: landscape){
+    .section {
+        flex-basis: 100%;
+    }
+    .inner-section {
+        flex-basis: 100%;
+    }
+}
 /*Tablet*/
 @media only screen and (min-width: 426px){
     main {
@@ -170,6 +202,12 @@ svg {
     }
     .section {
         flex-basis: 45%;
+    }
+    .plain-section {
+        flex-basis: 100%;
+    }
+    .inner-section {
+        flex-basis: 45%;;
     }
     .education {
         margin-top: 1.5rem;
@@ -199,21 +237,30 @@ svg {
 }
 /*Desktop*/
 @media (min-width: 769px){
-    .section {
-        flex-basis: 26.5vw;
+    main {
+        width: 95%;
+        margin:auto;
     }
-    
+    .section {
+        flex-basis: 30vw;
+    }
+    .inner-section {
+        flex-basis: 30%;
+    }
     .card-content .work-entry:not(:last-child):after {
         width: 25vw;
     }
-}
-
-/*Lanscape Phone*/
-@media (orientation: landscape){
-    .section {
-        flex-basis: 100%;
+    .work-entry:hover{
+        background-color: var(--main-pink);
+        border-radius: 13px;
+    }
+    .section > .card-title:hover {
+        background: linear-gradient(10deg, var(--main-cyan), var(--main-pink));
+        transition: 0.5s;
     }
 }
+
+
 
 /*SVG*/
 svg .mouth{
